@@ -15,7 +15,7 @@ export class FormContacts extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    // id: nanoid();
+    id: nanoid();
     console.log(`Signed up as: ${this.state.name}`);
     this.props.onSubmit({ ...this.state });
   };

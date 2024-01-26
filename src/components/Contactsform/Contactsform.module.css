@@ -1,0 +1,21 @@
+.form {
+  max-width: 520px;
+  border: 1px solid;
+  padding: 25px;
+  margin: 20px auto;
+  text-align: center;
+}
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.formText {
+  font-size: 16px;
+}
+
+.btn {
+  margin: auto;
+}

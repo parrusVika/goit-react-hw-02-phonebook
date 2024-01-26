@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormContacts } from 'components/Contactsform/Contactsform';
-import { render } from 'react-dom';
+// import { render } from 'react-dom';
 import { Component } from 'react';
 import { ContactList } from 'components/ContactsList/ContactsList';
 

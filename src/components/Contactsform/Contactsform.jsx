@@ -6,17 +6,19 @@ import { nanoid } from 'nanoid';
 
 export class FormContacts extends Component {
   state = {
+    id: '',
     name: '',
   };
 
   handleChange = evt => {
-    this.setState({ name: evt.target.value });
+    this.setState({
+      name: evt.target.value,
+      id: nanoid(),
+    });
   };
 
   handleSubmit = evt => {
     evt.preventDefault();
-    id: nanoid();
-    console.log(`Signed up as: ${this.state.name}`);
     this.props.onSubmit({ ...this.state });
   };
 

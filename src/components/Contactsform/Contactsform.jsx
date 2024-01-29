@@ -6,20 +6,29 @@ import { nanoid } from 'nanoid';
 
 export class FormContacts extends Component {
   state = {
-    id: '',
     name: '',
+    number: '',
   };
 
   handleChange = evt => {
-    this.setState({
-      name: evt.target.value,
-      id: nanoid(),
-    });
+    const { name, value } = evt.currentTarget;
+    this.setState({ [name]: value });
   };
 
   handleSubmit = evt => {
     evt.preventDefault();
-    this.props.onSubmit({ ...this.state });
+
+    const newContact = {
+      id: nanoid(),
+      name: this.state.name,
+      number: this.state.number,
+    };
+    this.props.onSubmit(newContact);
+    this.reset();
+  };
+
+  reset = () => {
+    this.setState({ name: '', number: '' });
   };
 
   render() {
@@ -33,6 +42,16 @@ export class FormContacts extends Component {
               className={css.formText}
               type="text"
               name={this.name}
+              onChange={this.handleChange}
+              required
+            />
+          </label>
+          <label className={css.formLabel}>
+            <span>Number</span>
+            <input
+              className={css.formText}
+              type="tell"
+              name={this.number}
               onChange={this.handleChange}
               required
             />

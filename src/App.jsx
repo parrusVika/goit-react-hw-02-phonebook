@@ -15,27 +15,6 @@ export class App extends Component {
     filter: '',
   };
 
-  // handleAddContacts = formData => {
-  //   const hasDuplicates = this.state.contacts.some(
-  //     profile => profile.name === formData.name
-  //   );
-  //   if (hasDuplicates) {
-  //     alert('Contacts with name ${formData.name} already exist!');
-  //     return;
-  //   }
-  //   console.log('formData', formData);
-
-  //   const finalContacts = {
-  //     ...FormData,
-  //     id: Math.random().toString(),
-  //   };
-  //   this.setState(prevState => {
-  //     return {
-  //       contacts: [...prevState.contacts, finalContacts],
-  //     };
-  //   });
-  // };
-
   addContact = data => {
     if (
       !this.state.contacts.find(

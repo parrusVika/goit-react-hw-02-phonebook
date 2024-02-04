@@ -4,7 +4,7 @@ import css from './Contactsform.module.css';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 
-export class FormContacts extends Component {
+export class ContactsForm extends Component {
   state = {
     name: '',
     number: '',
@@ -33,7 +33,7 @@ export class FormContacts extends Component {
 
   render() {
     return (
-      <div>
+      <div className={css.formEl}>
         <h1>Phonebook</h1>
         <form className={css.form} onSubmit={this.handleSubmit}>
           <label className={css.formLabel}>
@@ -41,7 +41,8 @@ export class FormContacts extends Component {
             <input
               className={css.formText}
               type="text"
-              name={this.name}
+              name="name"
+              value={this.state.name}
               onChange={this.handleChange}
               required
             />
@@ -51,7 +52,8 @@ export class FormContacts extends Component {
             <input
               className={css.formText}
               type="tell"
-              name={this.number}
+              name="number"
+              value={this.state.number}
               onChange={this.handleChange}
               required
             />

@@ -1,0 +1,18 @@
+.contactEl {
+  margin: auto;
+  max-width: 520px;
+}
+
+.contactList {
+  display: flex;
+  outline: 2px solid;
+  justify-content: space-between;
+  align-items: center;
+}
+.contactItem {
+  font-size: 24px;
+  margin: 12px;
+}
+.contacBtn {
+  margin: 16px;
+}

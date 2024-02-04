@@ -1,23 +1,18 @@
-.formEl {
-  text-align: center;
-}
-.form {
+.filterForm {
   max-width: 520px;
+  border: 1px solid;
   padding: 25px;
   margin: 20px auto;
-  border: 1px solid;
+  text-align: center;
 }
-.formLabel {
+
+.filterEl {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-bottom: 20px;
 }
 
-.formText {
+.filterTitle {
   font-size: 16px;
-}
-
-.btn {
-  margin: auto;
 }

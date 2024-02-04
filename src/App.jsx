@@ -1,8 +1,8 @@
 import React from 'react';
-import { FormContacts } from 'components/Contactsform/Contactsform';
-// import { render } from 'react-dom';
+import { ContactsForm } from 'components/Contactsform/Contactsform';
 import { Component } from 'react';
 import { ContactList } from 'components/ContactsList/ContactsList';
+import { Filter } from 'components/Filter/Filter';
 
 export class App extends Component {
   state = {
@@ -33,6 +33,10 @@ export class App extends Component {
     }));
   };
 
+  findContact = evt => {
+    this.setState({ filter: evt.currentTarget.value });
+  };
+
   visibleContacts = () => {
     return this.state.contacts.filter(contact =>
       contact.name.toLowerCase().includes(this.state.filter.toLowerCase())
@@ -42,9 +46,8 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <FormContacts onSubmit={this.addContact}>
-          <h2>Contacts</h2>
-        </FormContacts>
+        <ContactsForm onSubmit={this.addContact}></ContactsForm>
+        <Filter value={this.state.filter} onChange={this.findContact}></Filter>
         <ContactList
           contacts={this.visibleContacts()}
           deleteContact={this.deleteContact}
